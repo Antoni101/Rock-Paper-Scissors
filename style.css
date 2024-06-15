@@ -1,0 +1,87 @@
+body, html {
+    background-color: Lavender;
+}
+
+#startBtn {
+    font-family: "Rubik", sans-serif;
+    font-size: 100px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10%;
+    border: 5px solid GoldenRod;
+    border-radius: 10px;
+    background-color: Orange;
+    color: Khaki;
+    opacity: 0.8;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#startBtn:hover {
+    font-size: 110px;
+    opacity: 1;
+    color: LightGoldenRodYellow;
+}
+
+#startBtn:active {
+    font-size: 105px;
+    color: LemonChiffon;
+}
+
+#r {
+    height: 300px;
+    width: 300px;
+    position:fixed;
+    display: none;
+    top: 40%;
+    left: 10%;
+    opacity: 0.0;
+}
+
+#p {
+    height: 300px;
+    width: 300px;
+    position:fixed;
+    display: none;
+    top: 40%;
+    left: 40%;
+    opacity: 0.0;
+}
+#s {
+    height: 300px;
+    width: 300px;
+    position:fixed;
+    display: none;
+    top: 40%;
+    left: 75%;
+    opacity: 0.0;
+}
+
+.options {
+    transition: 0.5s;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.options:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.options:active {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#cpuChoice {
+    position:fixed;
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    left: 40%;
+    top: -100%;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    transition: 0.5s;
+}
