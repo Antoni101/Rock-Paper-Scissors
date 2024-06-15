@@ -85,3 +85,17 @@ body, html {
     filter: drop-shadow(5px 5px 5px #222);
     transition: 0.5s;
 }
+
+#scoreboard {
+    font-family: "Rubik", sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-left: auto;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+#scoreboard:hover {
+    opacity: 1.0;
+    transform: scale(1.1);
+}

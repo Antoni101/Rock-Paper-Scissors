@@ -1,4 +1,5 @@
-
+var cpuPoints = 0;
+var userPoints = 0;
 
 
 function startGame() {
@@ -149,7 +150,9 @@ function doWinner(cpuChoice,userChoice) {
     }
 }
 
+//If User Wins
 function userWins() {
+    userPoints ++;
     document.getElementById("cpuChoice").style.opacity = "0.0";
     setTimeout(function() {
         document.getElementById("cpuChoice").style.display = "None";
@@ -157,10 +160,22 @@ function userWins() {
     setTimeout(function() { document.getElementById("r").style.top = "-100%";}, 2000)
     setTimeout(function() { document.getElementById("p").style.top = "-100%";}, 2000)
     setTimeout(function() { document.getElementById("s").style.top = "-100%";}, 2000)
+    setTimeout(function() { document.getElementById("cpuChoice").style.top = "-100%";}, 2000)
+    setTimeout(function() { 
+        document.getElementById("r").style.display = "None";
+        document.getElementById("p").style.display = "None";
+        document.getElementById("s").style.display = "None";
+        setTimeout(function() { document.getElementById("r").style.top = "150%";}, 2000)
+        setTimeout(function() { document.getElementById("p").style.top = "150%";}, 2000)
+        setTimeout(function() { document.getElementById("s").style.top = "150%";}, 2000)
+    }, 4000)
+    updatePoints()
     tryAgain()
 }
 
+//If Computer Wins
 function computerWins() {
+    cpuPoints ++;
     document.getElementById("r").style.opacity = "0.0";
     setTimeout(function() {
         document.getElementById("r").style.display = "None";
@@ -173,15 +188,29 @@ function computerWins() {
     setTimeout(function() {
         document.getElementById("s").style.display = "None";
     }, 1000)
-    setTimeout(function() { document.getElementById("cpuChoice").style.top = "150%"; }, 2000)
+    setTimeout(function() { 
+        document.getElementById("cpuChoice").style.top = "150%"; 
+        setTimeout(function() { 
+            document.getElementById("cpuChoice").style.display = "None"; 
+            setTimeout(function() { document.getElementById("cpuChoice").style.top = "-100%";}, 2000)
+        }, 1000)
+    }, 2000)
+    updatePoints()
     tryAgain()
 }
 
-
+//Function that changes the button to say 'Try Again?' to let the user play a new game
 function tryAgain() {
     setTimeout(function() {
         document.getElementById("startBtn").innerHTML = "Try Again?";
         document.getElementById("startBtn").style.opacity = "1";
         document.getElementById("startBtn").style.display = "Block";
     }, 3000)
+}
+
+//Function that updates the scoreboard everytime its called
+function updatePoints() {
+    document.getElementById("scoreboard").style.transform = "scale(1.2)";
+    setTimeout(function() { document.getElementById("scoreboard").style.transform = "scale(1.0)"; }, 1000)
+    document.getElementById("scoreboard").innerHTML = '<strong>🤖' + cpuPoints + '</strong> <strong>🙂' + userPoints + '</strong>'
 }
