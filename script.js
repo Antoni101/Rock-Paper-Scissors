@@ -205,7 +205,7 @@ function tryAgain() {
         document.getElementById("startBtn").innerHTML = "Try Again?";
         document.getElementById("startBtn").style.opacity = "1";
         document.getElementById("startBtn").style.display = "Block";
-    }, 3000)
+    }, 4000)
 }
 
 //Function that updates the scoreboard everytime its called
